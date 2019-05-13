@@ -1,36 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hellotvxlet;
-
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import org.havi.ui.HComponent;
 
-
-
-
-
-
-
-
-
-public class GameComponent
-  extends HComponent
-{
+public class GameComponent extends HComponent {
   ArrayList slang = new ArrayList();
-
-
   
   public GameComponent() { setBounds(0, 0, 720, 576); }
 
-
-
-  
   public void paint(Graphics g) {
     for (int i = 0; i < this.slang.size(); i++) {
       

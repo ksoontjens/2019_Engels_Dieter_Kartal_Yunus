@@ -38,17 +38,17 @@ public class HelloTVXlet
     this.scene = HSceneFactory.getInstance().getDefaultHScene();
 
     
-    HStaticText hst = new HStaticText("SNAKE", '?', 80, '?', 100);
+    HStaticText hst = new HStaticText("SNAKE", 280, 80, 150, 100);
     hst.setBackgroundMode(1);
     hst.setBackground(Color.BLUE);
     this.scene.add(hst);
     
-    HTextButton button1 = new HTextButton("Start Game", '?', '?', '?', 50);
+    HTextButton button1 = new HTextButton("Start Game", 200, 290, 310, 50);
     button1.setBackgroundMode(1);
     button1.setBackground(Color.GREEN);
     this.scene.add(button1);
     
-    HTextButton button2 = new HTextButton("Exit Game", '?', '?', '?', 50);
+    HTextButton button2 = new HTextButton("Exit Game", 200, 380, 310, 50);
     button2.setBackgroundMode(1);
     button2.setBackground(Color.RED);
     this.scene.add(button2);

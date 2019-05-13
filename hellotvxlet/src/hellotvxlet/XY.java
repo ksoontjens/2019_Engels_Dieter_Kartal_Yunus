@@ -1,10 +1,5 @@
 package hellotvxlet;
 
-
-
-
-
-
 public class XY
 {
   public int x;
