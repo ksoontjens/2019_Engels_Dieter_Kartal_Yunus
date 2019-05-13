@@ -43,7 +43,7 @@ public class HelloTVXlet
     hst.setBackground(Color.BLUE);
     this.scene.add(hst);
     
-    HTextButton button1 = new HTextButton("play Game", 200, 290, 310, 50);
+    HTextButton button1 = new HTextButton("Play Game", 200, 290, 310, 50);
     button1.setBackgroundMode(1);
     button1.setBackground(Color.GREEN);
     this.scene.add(button1);
