@@ -22,20 +22,20 @@ public class HelloTVXlet
 {
   HScene scene;
   HStaticText hst2 = null;
-  int kopx = 100;
-  int kopy = 100;
+  int kopx = 20;
+  int kopy = 20;
   int richtingx = 0;
-  int richtingy = 0;
+  int richtingy = 15;
   GameComponent gc = new GameComponent();
   MijnTimerTask mtt = new MijnTimerTask(this);
   Timer t = new Timer();
-
-
+  
 
 
   
   public void initXlet(XletContext ctx) throws XletStateChangeException {
     this.scene = HSceneFactory.getInstance().getDefaultHScene();
+    
 
     
     HStaticText hst = new HStaticText("SNAKE", 280, 80, 150, 100);
