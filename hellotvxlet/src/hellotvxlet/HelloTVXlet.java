@@ -16,6 +16,7 @@ import org.havi.ui.HSceneFactory;
 import org.havi.ui.HStaticText;
 import org.havi.ui.HTextButton;
 import org.havi.ui.event.HActionListener;
+import hellotvxlet.GameComponent;
 
 public class HelloTVXlet
   implements Xlet, HActionListener, UserEventListener
@@ -26,7 +27,10 @@ public class HelloTVXlet
   int kopy = 20;
   int richtingx = 0;
   int richtingy = 15;
+  int eatfood = 0;
+  
   GameComponent gc = new GameComponent();
+  
   MijnTimerTask mtt = new MijnTimerTask(this);
   Timer t = new Timer();
   
@@ -35,6 +39,7 @@ public class HelloTVXlet
   
   public void initXlet(XletContext ctx) throws XletStateChangeException {
     this.scene = HSceneFactory.getInstance().getDefaultHScene();
+      
     
 
     
@@ -52,10 +57,9 @@ public class HelloTVXlet
     button2.setBackgroundMode(1);
     button2.setBackground(Color.RED);
     this.scene.add(button2);
+    
 
     
-    button1.setFocusTraversal(null, button2, null, null);
-    button2.setFocusTraversal(button1, null, null, null);
     
     button1.setActionCommand("button1");
     button1.addHActionListener(this);
@@ -70,52 +74,44 @@ public class HelloTVXlet
     this.scene.validate();
     this.scene.setVisible(true);
   }
-
-
-
-
   
   public void run() {
     System.out.println(".");
     this.kopx += this.richtingx;
     this.kopy += this.richtingy;
-    
     for (int i = 0; i < this.gc.slang.size(); i++) {
       
       if (((XY)this.gc.slang.get(i)).x == this.kopx && 
         ((XY)this.gc.slang.get(i)).y == this.kopy) {
         System.out.println("game over");
       }
-    } 
+      if (((XY)this.gc.slang.get(i)).x == ((XY)this.gc.food.get(0)).x && ((XY)this.gc.slang.get(i)).y == ((XY)this.gc.food.get(0)).y) {
+    }      
+      
+    }
+    
+    
     this.gc.slang.add(new XY(this.kopx, this.kopy));
+    this.gc.repaint();
+    this.gc.food.add(new XY(500, 200));
     this.gc.repaint();
     if (this.gc.slang.size() > 8) this.gc.slang.remove(0);
   
   }
-
-
-  
-  public void startXlet() {}
-
-
-  
-  public void pauseXlet() {}
-
-
-  
+  public void startXlet() {} 
+  public void pauseXlet() {}  
   public void destroyXlet(boolean unconditional) {}
-
   
   public void actionPerformed(ActionEvent arg0) {
     if (this.hst2 != null) {
       this.scene.remove(this.hst2);
     }
-    
     if (arg0.getActionCommand().equals("button1")) {
       this.scene.removeAll();
 
       
       this.scene.add(this.gc);
+      
 
       
       this.scene.repaint();
